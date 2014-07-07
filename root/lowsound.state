@@ -302,8 +302,8 @@ state.EVM {
 	control.22 {
 		iface MIXER
 		name 'Line DAC Playback Volume'
-		value.0 99
-		value.1 99
+		value.0 92
+		value.1 92
 		comment {
 			access 'read write'
 			type INTEGER
@@ -311,8 +311,8 @@ state.EVM {
 			range '0 - 118'
 			dbmin -9999999
 			dbmax 0
-			dbvalue.0 -950
-			dbvalue.1 -950
+			dbvalue.0 -1300
+			dbvalue.1 -1300
 		}
 	}
 	control.23 {
