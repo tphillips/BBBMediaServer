@@ -36,15 +36,14 @@ sleep 5
 #/usr/local/bin/noip2
 #/etc/init.d/mpd start
 #sleep 5
-sleep 5
 ifdown usb0
 ifdown usb1
 ifup usb0
 sleep 5
-ntpdate -d pool.ntp.org
-sleep 5
-/usr/local/bin/shairport -a "MediaServer" -d -b 350
-sleep 5
+/usr/sbin/ntpdate -d pool.ntp.org
 iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o usb0 -j MASQUERADE
 echo 1 > /proc/sys/net/ipv4/ip_forward
+/usr/local/bin/shairport -a "MediaServer" -d -b 350
+sleep 5
+/root/watchdog.sh > /var/log/watchdog &
 exit 0
