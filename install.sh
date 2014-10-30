@@ -1,3 +1,5 @@
+#!/bin/bash
+
 su
 echo "optargs=capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN" >> /boot/uboot/uEnv.txt
 apt-get update

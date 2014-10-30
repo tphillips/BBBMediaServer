@@ -41,7 +41,7 @@ ifdown usb0
 ifdown usb1
 ifup usb0
 sleep 5
-ntpdate -u pool.ntp.org
+ntpdate -d pool.ntp.org
 sleep 5
 /usr/local/bin/shairport -a "MediaServer" -d -b 350
 sleep 5
