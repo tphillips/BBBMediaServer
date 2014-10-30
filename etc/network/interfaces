@@ -14,13 +14,8 @@ iface eth0 inet dhcp
 # WiFi Example
 auto wlan0
 iface wlan0 inet static
-	#wpa-ssid "Sequence"    
-	#wpa-psk "fbmdycxc"
 	address 192.168.0.1
 	netmask 255.255.255.0
-	#network 192.168.0.0
-	#gateway 192.168.0.1
-	#dns-nameservers 8.8.8.8
 
 # Ethernet/RNDIS gadget (g_ether)
 # ... or on host side, usbnet and random hwaddr
