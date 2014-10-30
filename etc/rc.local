@@ -10,7 +10,6 @@
 # bits.
 #
 # By default this script does nothing.
-#espeak "Booted, waiting for IP address"
 
 /root/startScript.sh
 exit 0
