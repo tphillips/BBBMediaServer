@@ -1,4 +1,5 @@
 BBBMediaServer
 ==============
 
-Media streaming server and router for beagle bone black
+Media streaming, home automation server and router for beagle bone black.
+
