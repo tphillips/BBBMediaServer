@@ -27,6 +27,11 @@ if ($_POST["action"] == "LBC")
 	system("sudo mplayer http://81.20.49.11:80/LBCLondonMP3Low &");
 }
 
+if ($_POST["action"] == "Stop")
+{
+	system("ps -A | grep mplayer | sudo kill `awk '{ print $1 }'`");
+}
+
 if ($_POST["action"] == "Flex FM")
 {
 	system("ps -A | grep mplayer | sudo kill `awk '{ print $1 }'`");
@@ -87,6 +92,7 @@ if ($_POST["action"] == "Shutdown")
 			<input type="submit" value="White Noise" name="action">
 			<input type="submit" value="LBC" name="action">
 			<input type="submit" value="Flex FM" name="action">
+			<input type="submit" value="Stop" name="action">
 			<br/>
 			<input type="submit" value="Low Volume" name="action">
 			<input type="submit" value="Medium Volume" name="action">
