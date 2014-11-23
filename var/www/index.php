@@ -58,8 +58,10 @@ if ($_POST["action"] == "Shutdown")
 			<br/>
 			<input type="submit" value="Prev" name="action">
 			<br/>
-			<input type="submit" value="Music" name="action"-->
-			<!--input type="submit" value="LBC" name="action">
+			-->
+			<input type="submit" value="Music" name="action">
+			<input type="submit" value="LBC" name="action">
+			<!--
 			<input type="submit" value="Flex FM" name="action">
 			<br/>
 			<input type="submit" value="Low Volume" name="action">
