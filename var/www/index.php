@@ -27,6 +27,13 @@ if ($_POST["action"] == "LBC")
 	system("sudo mplayer http://81.20.49.11:80/LBCLondonMP3Low &");
 }
 
+if ($_POST["action"] == "Flex FM")
+{
+	system("ps -A | grep mplayer | sudo kill `awk '{ print $1 }'`");
+	system("sleep 1");
+	system("sudo mplayer http://65.60.52.122:8220 &");
+}
+
 if ($_POST["action"] == "Low Volume")
 {
 	system("sudo cp /root/lowsound.state /var/lib/alsa/asound.state");
