@@ -6,54 +6,18 @@ $uptime = system("uptime");
 $usage = system("/sbin/ifconfig usb0 | grep RX ");
 echo("-->");
 
-if ($_POST["action"] == "Pause")
-{
-	system("wget http://localhost:7000/requests/status.xml?command=pl_stop -O /dev/null");
-}
-
-if ($_POST["action"] == "Play")
-{
-	system("wget http://localhost:7000/requests/status.xml?command=pl_play -O /dev/null");
-}
-
-if ($_POST["action"] == "Next")
-{
-	system("wget http://localhost:7000/requests/status.xml?command=pl_next -O /dev/null");
-}
-
-if ($_POST["action"] == "Prev")
-{
-	system("wget http://localhost:7000/requests/status.xml?command=pl_previous -O /dev/null");
-}
-
 if ($_POST["action"] == "Music")
 {
-	system("wget \"http://localhost:7000/requests/status.xml?command=pl_play&id=10\" -O /dev/null");
+	system("ps -A | grep mplayer | kill `awk '{ print $1 }'`");
+	system("sleep 1");
+	system("mplayer -shuffle /root/music/*/*/* &");
 }
 
 if ($_POST["action"] == "LBC")
 {
-	system("wget \"http://localhost:7000/requests/status.xml?command=pl_play&id=9\" -O /dev/null");
-}
-
-if ($_POST["action"] == "Flex FM")
-{
-	system("wget \"http://localhost:7000/requests/status.xml?command=pl_play&id=4\" -O /dev/null");
-}
-
-if ($_POST["action"] == "Low Volume")
-{
-	system("wget \"http://localhost:7000/requests/status.xml?command=volume&val=138\" -O /dev/null");
-}
-
-if ($_POST["action"] == "Medium Volume")
-{
-	system("wget \"http://localhost:7000/requests/status.xml?command=volume&val=200\" -O /dev/null");
-}
-
-if ($_POST["action"] == "Full Volume")
-{
-	system("wget \"http://localhost:7000/requests/status.xml?command=volume&val=256\" -O /dev/null");
+	system("ps -A | grep mplayer | kill `awk '{ print $1 }'`");
+	system("sleep 1");
+	system("mplayer http://81.20.49.11:80/LBCLondonMP3Low &");
 }
 
 if ($_POST["action"] == "Reboot")
@@ -65,17 +29,6 @@ if ($_POST["action"] == "Shutdown")
 {
 	system("sudo poweroff");
 }
-
-if ($_POST["action"] == "Stop Services")
-{
-	system("sudo killall mono; sudo killall vlc");
-}
-
-if ($_POST["action"] == "Cycle Services")
-{
-	system("sudo killall mono; sudo killall vlc; sudo /etc/init.d/mpd restart; sudo /etc/rc.local");
-}
-
 
 ?>
 <!DOCTYPE html> 
