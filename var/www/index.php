@@ -20,6 +20,18 @@ if ($_POST["action"] == "LBC")
 	system("sudo mplayer http://81.20.49.11:80/LBCLondonMP3Low &");
 }
 
+if ($_POST["action"] == "Low Volume")
+{
+	system("sudo cp /root/goodsound.state /var/lib/alsa/asound.state");
+	system("sudo alsactl restore");
+}
+
+if ($_POST["action"] == "High Volume")
+{
+	system("sudo cp /root/loudsound.state /var/lib/alsa/asound.state");
+	system("sudo alsactl restore");
+}
+
 if ($_POST["action"] == "Reboot")
 {
 	system("sudo shutdown -rF now");
@@ -63,10 +75,12 @@ if ($_POST["action"] == "Shutdown")
 			<input type="submit" value="LBC" name="action">
 			<!--
 			<input type="submit" value="Flex FM" name="action">
+			-->
 			<br/>
 			<input type="submit" value="Low Volume" name="action">
 			<input type="submit" value="Medium Volume" name="action">
 			<input type="submit" value="Full Volume" name="action">
+			<!--
 			<br/-->
 			<input type="submit" value="Reboot" name="action">
 			<input type="submit" value="Shutdown" name="action">
