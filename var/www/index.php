@@ -8,16 +8,16 @@ echo("-->");
 
 if ($_POST["action"] == "Music")
 {
-	system("ps -A | grep mplayer | kill `awk '{ print $1 }'`");
+	system("ps -A | grep mplayer | sudo kill `awk '{ print $1 }'`");
 	system("sleep 1");
-	system("mplayer -shuffle /root/music/*/*/* &");
+	system("sudo mplayer -shuffle /root/music/*/*/* &");
 }
 
 if ($_POST["action"] == "LBC")
 {
-	system("ps -A | grep mplayer | kill `awk '{ print $1 }'`");
+	system("ps -A | grep mplayer | sudo kill `awk '{ print $1 }'`");
 	system("sleep 1");
-	system("mplayer http://81.20.49.11:80/LBCLondonMP3Low &");
+	system("sudo mplayer http://81.20.49.11:80/LBCLondonMP3Low &");
 }
 
 if ($_POST["action"] == "Reboot")
